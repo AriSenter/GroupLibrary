@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Home_Library"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800">
+        Title="AdminWindow" Height="450" Width="800" Background="#FFD48D89">
     <Grid>
         <TabControl >
-            <TabItem Header="Книги">
-                <Grid Background="#FFE5E5E5">
-                    <ListView x:Name="listviewTovar" Margin="0,0,0,43">
+            <TabItem Header="Книги" FontFamily="Cooper Black" BorderBrush="{x:Null}" Foreground="#FF444444">
+                <Grid Background="#FFD48D89">
+                    <ListView x:Name="listviewTovar" Margin="0,0,0,43" BorderBrush="{x:Null}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -45,13 +45,13 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    <Button Content="Добавить" HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Bottom" Height="31" Width="150"/>
-                    <Button Content="Изменить" HorizontalAlignment="Left" Margin="205,0,0,0" Width="150" Click="Button_Click_1" VerticalAlignment="Bottom" Height="31"/>
-                    <Button Content="Удалить" HorizontalAlignment="Left" Margin="402,0,0,0" Width="150" Click="Button_Click_2" VerticalAlignment="Bottom" Height="31"/>
+                    <Button Content="Добавить" HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Bottom" Height="31" Width="150" Background="#FF373C3B" BorderBrush="{x:Null}" Foreground="White"/>
+                    <Button Content="Изменить" HorizontalAlignment="Left" Margin="205,0,0,0" Width="150" Click="Button_Click_1" VerticalAlignment="Bottom" Height="31" Background="#FF373C3B" BorderBrush="{x:Null}" Foreground="White"/>
+                    <Button Content="Удалить" HorizontalAlignment="Left" Margin="402,0,0,0" Width="150" Click="Button_Click_2" VerticalAlignment="Bottom" Height="31" Background="#FF373C3B" BorderBrush="{x:Null}" Foreground="White"/>
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Читатели">
+            <TabItem Header="Читатели" FontFamily="Cooper Black" BorderBrush="{x:Null}" Foreground="#FF444444">
                 <Grid Background="#FFE5E5E5">
                     <ListView x:Name="listviewChit">
                         <ListView.ItemTemplate>
@@ -82,7 +82,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="История">
+            <TabItem Header="История" FontFamily="Cooper Black" BorderBrush="{x:Null}" Foreground="#FF444444">
                 <Grid Background="#FFE5E5E5">
                     <ListView x:Name="listviewHis">
                         <ListView.ItemTemplate>

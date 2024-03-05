@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Home_Library"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="310" Width="530">
+        Title="Авторизация" Height="329" Width="530" Background="#FFD48D89">
     <Grid>
-        <Grid HorizontalAlignment="Center" Height="209" Margin="0,54,0,0" VerticalAlignment="Top" Width="477">
+        <Grid HorizontalAlignment="Center" Height="209" Margin="0,69,0,0" VerticalAlignment="Top" Width="478">
 
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -20,10 +20,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Логин" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
-            <TextBlock Text="Пароль" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
-            <TextBox x:Name="login" Grid.Column="1" Grid.Row="0" FontSize="20"  FontWeight="Bold"/>
-            <PasswordBox x:Name="password" Grid.Column="1" Grid.Row="1" FontSize="20"/>
+            <TextBlock Text="Логин" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
+            <TextBlock Text="Пароль" Grid.Row="1" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Foreground="White"/>
+            <TextBox x:Name="login" Grid.Column="1" Grid.Row="0" FontSize="20"  FontWeight="Bold" BorderBrush="{x:Null}" FontFamily="Cooper Black"/>
+            <PasswordBox x:Name="password" Grid.Column="1" Grid.Row="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Cooper Black"/>
             <TextBlock Visibility="Hidden" x:Name="Capcha" Grid.Row="2" Grid.Column="0" Text="label" FontSize="14" FontFamily="Wide Latin" FontStyle="Italic" IsEnabled="False" RenderTransformOrigin="0.62,0.46" Margin="73,15,95,7" Opacity="0.6" TextDecorations="StrikeThrough" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
@@ -45,8 +45,8 @@
                 </TextBlock.Foreground>
             </TextBlock>
             <TextBox Visibility="Hidden" Grid.Row="2" Grid.Column="1" x:Name="Cap" FontSize="20" FontWeight="Bold"/>
-            <Button Foreground="White" Grid.Row="4" Grid.Column="0" Content="Войти" Click="AuthorizationClick" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2" Margin="119,0"/>
+            <Button Foreground="White" Grid.Row="4" Grid.Column="0" Content="Войти" Click="AuthorizationClick" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="2" Margin="119,0" Background="#FF373C3B" FontFamily="Cooper Black"/>
         </Grid>
-        <Label Content="Авторизация" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Авторизация" HorizontalAlignment="Center" Margin="0,7,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White" FontFamily="Cooper Black"/>
     </Grid>
 </Window>
