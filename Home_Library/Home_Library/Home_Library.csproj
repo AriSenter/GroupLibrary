@@ -225,6 +225,7 @@
     <Resource Include="wolf.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Logo.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

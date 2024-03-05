@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Home_Library"
         mc:Ignorable="d"
-        Title="LibrarianWindow" Height="450" Width="800">
+        Title="Главная" Height="450" Width="800" Background="#FFD48D89">
     <Grid>
         <TabControl >
-            <TabItem Header="Книги">
+            <TabItem Header="Книги" BorderBrush="{x:Null}" Foreground="#FF373C3B" FontFamily="Cooper Black">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
                 <Grid Background="#FFE5E5E5">
-                    <ListView x:Name="listviewTovar">
+                    <ListView x:Name="listviewTovar" BorderBrush="{x:Null}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -48,9 +54,9 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Читатели">
+            <TabItem Header="Читатели" BorderBrush="{x:Null}" Foreground="#FF373C3B" FontFamily="Cooper Black">
                 <Grid Background="#FFE5E5E5">
-                    <ListView x:Name="listviewChit">
+                    <ListView x:Name="listviewChit" BorderBrush="{x:Null}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -79,6 +85,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-       
+
     </Grid>
 </Window>
