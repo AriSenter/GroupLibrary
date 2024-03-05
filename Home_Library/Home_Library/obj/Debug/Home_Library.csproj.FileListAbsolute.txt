@@ -57,3 +57,43 @@ D:\git\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.csproj.Core
 D:\git\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.csproj.CopyComplete
 D:\git\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.exe
 D:\git\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.pdb
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\Home_Library.exe.config
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\Home_Library.exe
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\Home_Library.pdb
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\EntityFramework.dll
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\EntityFramework.xml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.csproj.AssemblyReference.cache
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.csproj.SuggestedBindingRedirects.cache
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\AddOrUpdateBook.g.cs
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\AdminWindow.g.cs
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\LibrarianWindow.g.cs
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\LoginWindow.g.cs
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\MainWindow.g.cs
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\App.g.cs
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library_Content.g.cs
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library_MarkupCompile.cache
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library_MarkupCompile.lref
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\AddOrUpdateBook.baml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\AdminWindow.baml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\LibrarianWindow.baml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\LoginWindow.baml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\MainWindow.baml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.g.resources
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.Properties.Resources.resources
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.csproj.GenerateResource.cache
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.csproj.CoreCompileInputs.cache
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.csproj.CopyComplete
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.exe
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\obj\Debug\Home_Library.pdb
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\nunit.framework.dll
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\nunit.framework.legacy.dll
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\nunit.framework.xml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\nunit.framework.legacy.xml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Mur4alka\Desktop\Дистанционка\4 КУРС\2 полугодие\МДК 07.01\02.03 Групповая библиотека\Приложение\GroupLibrary\Home_Library\Home_Library\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
