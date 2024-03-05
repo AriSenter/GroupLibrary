@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1bc16eae29b6458da507706b7e54fbe8" Name="Diagram1">
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Author" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Book" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Book_Author" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Book_Genre" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Book_Izdatel" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Genre" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_History" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Izdatel" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Role" Width="1.5" PointX="1.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_Status" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user190_dbModel.BIBKA_User" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_Book_Author_BIBKA_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_Book_Author_BIBKA_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_Book_Genre_BIBKA_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_Book_Izdatel_BIBKA_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_History_BIBKA_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_Book_Genre_BIBKA_Genre" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_Book_Izdatel_BIBKA_Izdatel" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_History_BIBKA_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_History_BIBKA_User" ManuallyRouted="false" />
+        <AssociationConnector Association="user190_dbModel.FK_BIBKA_User_BIBKA_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище user190_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BIBKA_Author">
+          <Key>
+            <PropertyRef Name="id_author" />
+          </Key>
+          <Property Name="id_author" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="patronymic" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book">
+          <Key>
+            <PropertyRef Name="id_book" />
+          </Key>
+          <Property Name="id_book" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="book_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="book_description" Type="nvarchar" MaxLength="500" />
+          <Property Name="book_photo" Type="nvarchar" MaxLength="50" />
+          <Property Name="book_produce_year" Type="int" />
+          <Property Name="book_amount" Type="int" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book_Author">
+          <Key>
+            <PropertyRef Name="id_book_author" />
+          </Key>
+          <Property Name="id_book_author" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_id_book" Type="int" />
+          <Property Name="fk_id_author" Type="int" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book_Genre">
+          <Key>
+            <PropertyRef Name="id_book_genre" />
+          </Key>
+          <Property Name="id_book_genre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_id_book" Type="int" />
+          <Property Name="fk_id_genre" Type="int" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book_Izdatel">
+          <Key>
+            <PropertyRef Name="id_book_izdatel" />
+          </Key>
+          <Property Name="id_book_izdatel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_id_book" Type="int" />
+          <Property Name="fk_id_izdatel" Type="int" />
+        </EntityType>
+        <EntityType Name="BIBKA_Genre">
+          <Key>
+            <PropertyRef Name="id_genre" />
+          </Key>
+          <Property Name="id_genre" Type="int" Nullable="false" />
+          <Property Name="genre_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BIBKA_History">
+          <Key>
+            <PropertyRef Name="id_history" />
+          </Key>
+          <Property Name="id_history" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_id_user" Type="int" />
+          <Property Name="fk_id_book" Type="int" />
+          <Property Name="fk_id_status" Type="int" />
+        </EntityType>
+        <EntityType Name="BIBKA_Izdatel">
+          <Key>
+            <PropertyRef Name="id_izdatel" />
+          </Key>
+          <Property Name="id_izdatel" Type="int" Nullable="false" />
+          <Property Name="izdatel_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="izdatel_adress" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIBKA_Role">
+          <Key>
+            <PropertyRef Name="id_role" />
+          </Key>
+          <Property Name="id_role" Type="int" Nullable="false" />
+          <Property Name="role_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BIBKA_Status">
+          <Key>
+            <PropertyRef Name="id_status" />
+          </Key>
+          <Property Name="id_status" Type="int" Nullable="false" />
+          <Property Name="status_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BIBKA_User">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="int" Nullable="false" />
+          <Property Name="fk_id_role" Type="int" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="patronymic" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_BIBKA_Book_Author_BIBKA_Author">
+          <End Role="BIBKA_Author" Type="Self.BIBKA_Author" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Author" Type="Self.BIBKA_Book_Author" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Author">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Author">
+              <PropertyRef Name="fk_id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Author_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Author" Type="Self.BIBKA_Book_Author" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Author">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Genre_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Genre" Type="Self.BIBKA_Book_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Genre">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Genre_BIBKA_Genre">
+          <End Role="BIBKA_Genre" Type="Self.BIBKA_Genre" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Genre" Type="Self.BIBKA_Book_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Genre">
+              <PropertyRef Name="id_genre" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Genre">
+              <PropertyRef Name="fk_id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Izdatel_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Izdatel" Type="Self.BIBKA_Book_Izdatel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Izdatel">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Izdatel_BIBKA_Izdatel">
+          <End Role="BIBKA_Izdatel" Type="Self.BIBKA_Izdatel" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Izdatel" Type="Self.BIBKA_Book_Izdatel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Izdatel">
+              <PropertyRef Name="id_izdatel" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Izdatel">
+              <PropertyRef Name="fk_id_izdatel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_History_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_History" Type="Self.BIBKA_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_History">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_History_BIBKA_Status">
+          <End Role="BIBKA_Status" Type="Self.BIBKA_Status" Multiplicity="0..1" />
+          <End Role="BIBKA_History" Type="Self.BIBKA_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Status">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="BIBKA_History">
+              <PropertyRef Name="fk_id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_History_BIBKA_User">
+          <End Role="BIBKA_User" Type="Self.BIBKA_User" Multiplicity="0..1" />
+          <End Role="BIBKA_History" Type="Self.BIBKA_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_User">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="BIBKA_History">
+              <PropertyRef Name="fk_id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_User_BIBKA_Role">
+          <End Role="BIBKA_Role" Type="Self.BIBKA_Role" Multiplicity="0..1" />
+          <End Role="BIBKA_User" Type="Self.BIBKA_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Role">
+              <PropertyRef Name="id_role" />
+            </Principal>
+            <Dependent Role="BIBKA_User">
+              <PropertyRef Name="fk_id_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище user190_dbModelContainer">
+          <EntitySet Name="BIBKA_Author" EntityType="Self.BIBKA_Author" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Book" EntityType="Self.BIBKA_Book" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Book_Author" EntityType="Self.BIBKA_Book_Author" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Book_Genre" EntityType="Self.BIBKA_Book_Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Book_Izdatel" EntityType="Self.BIBKA_Book_Izdatel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Genre" EntityType="Self.BIBKA_Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_History" EntityType="Self.BIBKA_History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Izdatel" EntityType="Self.BIBKA_Izdatel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Role" EntityType="Self.BIBKA_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_Status" EntityType="Self.BIBKA_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BIBKA_User" EntityType="Self.BIBKA_User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BIBKA_Book_Author_BIBKA_Author" Association="Self.FK_BIBKA_Book_Author_BIBKA_Author">
+            <End Role="BIBKA_Author" EntitySet="BIBKA_Author" />
+            <End Role="BIBKA_Book_Author" EntitySet="BIBKA_Book_Author" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Author_BIBKA_Book" Association="Self.FK_BIBKA_Book_Author_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_Book_Author" EntitySet="BIBKA_Book_Author" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Genre_BIBKA_Book" Association="Self.FK_BIBKA_Book_Genre_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_Book_Genre" EntitySet="BIBKA_Book_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Genre_BIBKA_Genre" Association="Self.FK_BIBKA_Book_Genre_BIBKA_Genre">
+            <End Role="BIBKA_Genre" EntitySet="BIBKA_Genre" />
+            <End Role="BIBKA_Book_Genre" EntitySet="BIBKA_Book_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Izdatel_BIBKA_Book" Association="Self.FK_BIBKA_Book_Izdatel_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_Book_Izdatel" EntitySet="BIBKA_Book_Izdatel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Izdatel_BIBKA_Izdatel" Association="Self.FK_BIBKA_Book_Izdatel_BIBKA_Izdatel">
+            <End Role="BIBKA_Izdatel" EntitySet="BIBKA_Izdatel" />
+            <End Role="BIBKA_Book_Izdatel" EntitySet="BIBKA_Book_Izdatel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_History_BIBKA_Book" Association="Self.FK_BIBKA_History_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_History" EntitySet="BIBKA_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_History_BIBKA_Status" Association="Self.FK_BIBKA_History_BIBKA_Status">
+            <End Role="BIBKA_Status" EntitySet="BIBKA_Status" />
+            <End Role="BIBKA_History" EntitySet="BIBKA_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_History_BIBKA_User" Association="Self.FK_BIBKA_History_BIBKA_User">
+            <End Role="BIBKA_User" EntitySet="BIBKA_User" />
+            <End Role="BIBKA_History" EntitySet="BIBKA_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_User_BIBKA_Role" Association="Self.FK_BIBKA_User_BIBKA_Role">
+            <End Role="BIBKA_Role" EntitySet="BIBKA_Role" />
+            <End Role="BIBKA_User" EntitySet="BIBKA_User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="user190_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BIBKA_Author">
+          <Key>
+            <PropertyRef Name="id_author" />
+          </Key>
+          <Property Name="id_author" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BIBKA_Book_Author" Relationship="Self.FK_BIBKA_Book_Author_BIBKA_Author" FromRole="BIBKA_Author" ToRole="BIBKA_Book_Author" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book">
+          <Key>
+            <PropertyRef Name="id_book" />
+          </Key>
+          <Property Name="id_book" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="book_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="book_description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="book_photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="book_produce_year" Type="Int32" />
+          <Property Name="book_amount" Type="Int32" />
+          <NavigationProperty Name="BIBKA_Book_Author" Relationship="Self.FK_BIBKA_Book_Author_BIBKA_Book" FromRole="BIBKA_Book" ToRole="BIBKA_Book_Author" />
+          <NavigationProperty Name="BIBKA_Book_Genre" Relationship="Self.FK_BIBKA_Book_Genre_BIBKA_Book" FromRole="BIBKA_Book" ToRole="BIBKA_Book_Genre" />
+          <NavigationProperty Name="BIBKA_Book_Izdatel" Relationship="Self.FK_BIBKA_Book_Izdatel_BIBKA_Book" FromRole="BIBKA_Book" ToRole="BIBKA_Book_Izdatel" />
+          <NavigationProperty Name="BIBKA_History" Relationship="Self.FK_BIBKA_History_BIBKA_Book" FromRole="BIBKA_Book" ToRole="BIBKA_History" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book_Author">
+          <Key>
+            <PropertyRef Name="id_book_author" />
+          </Key>
+          <Property Name="id_book_author" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_id_book" Type="Int32" />
+          <Property Name="fk_id_author" Type="Int32" />
+          <NavigationProperty Name="BIBKA_Author" Relationship="Self.FK_BIBKA_Book_Author_BIBKA_Author" FromRole="BIBKA_Book_Author" ToRole="BIBKA_Author" />
+          <NavigationProperty Name="BIBKA_Book" Relationship="Self.FK_BIBKA_Book_Author_BIBKA_Book" FromRole="BIBKA_Book_Author" ToRole="BIBKA_Book" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book_Genre">
+          <Key>
+            <PropertyRef Name="id_book_genre" />
+          </Key>
+          <Property Name="id_book_genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_id_book" Type="Int32" />
+          <Property Name="fk_id_genre" Type="Int32" />
+          <NavigationProperty Name="BIBKA_Book" Relationship="Self.FK_BIBKA_Book_Genre_BIBKA_Book" FromRole="BIBKA_Book_Genre" ToRole="BIBKA_Book" />
+          <NavigationProperty Name="BIBKA_Genre" Relationship="Self.FK_BIBKA_Book_Genre_BIBKA_Genre" FromRole="BIBKA_Book_Genre" ToRole="BIBKA_Genre" />
+        </EntityType>
+        <EntityType Name="BIBKA_Book_Izdatel">
+          <Key>
+            <PropertyRef Name="id_book_izdatel" />
+          </Key>
+          <Property Name="id_book_izdatel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_id_book" Type="Int32" />
+          <Property Name="fk_id_izdatel" Type="Int32" />
+          <NavigationProperty Name="BIBKA_Book" Relationship="Self.FK_BIBKA_Book_Izdatel_BIBKA_Book" FromRole="BIBKA_Book_Izdatel" ToRole="BIBKA_Book" />
+          <NavigationProperty Name="BIBKA_Izdatel" Relationship="Self.FK_BIBKA_Book_Izdatel_BIBKA_Izdatel" FromRole="BIBKA_Book_Izdatel" ToRole="BIBKA_Izdatel" />
+        </EntityType>
+        <EntityType Name="BIBKA_Genre">
+          <Key>
+            <PropertyRef Name="id_genre" />
+          </Key>
+          <Property Name="id_genre" Type="Int32" Nullable="false" />
+          <Property Name="genre_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BIBKA_Book_Genre" Relationship="Self.FK_BIBKA_Book_Genre_BIBKA_Genre" FromRole="BIBKA_Genre" ToRole="BIBKA_Book_Genre" />
+        </EntityType>
+        <EntityType Name="BIBKA_History">
+          <Key>
+            <PropertyRef Name="id_history" />
+          </Key>
+          <Property Name="id_history" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_id_user" Type="Int32" />
+          <Property Name="fk_id_book" Type="Int32" />
+          <Property Name="fk_id_status" Type="Int32" />
+          <NavigationProperty Name="BIBKA_Book" Relationship="Self.FK_BIBKA_History_BIBKA_Book" FromRole="BIBKA_History" ToRole="BIBKA_Book" />
+          <NavigationProperty Name="BIBKA_Status" Relationship="Self.FK_BIBKA_History_BIBKA_Status" FromRole="BIBKA_History" ToRole="BIBKA_Status" />
+          <NavigationProperty Name="BIBKA_User" Relationship="Self.FK_BIBKA_History_BIBKA_User" FromRole="BIBKA_History" ToRole="BIBKA_User" />
+        </EntityType>
+        <EntityType Name="BIBKA_Izdatel">
+          <Key>
+            <PropertyRef Name="id_izdatel" />
+          </Key>
+          <Property Name="id_izdatel" Type="Int32" Nullable="false" />
+          <Property Name="izdatel_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="izdatel_adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BIBKA_Book_Izdatel" Relationship="Self.FK_BIBKA_Book_Izdatel_BIBKA_Izdatel" FromRole="BIBKA_Izdatel" ToRole="BIBKA_Book_Izdatel" />
+        </EntityType>
+        <EntityType Name="BIBKA_Role">
+          <Key>
+            <PropertyRef Name="id_role" />
+          </Key>
+          <Property Name="id_role" Type="Int32" Nullable="false" />
+          <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BIBKA_User" Relationship="Self.FK_BIBKA_User_BIBKA_Role" FromRole="BIBKA_Role" ToRole="BIBKA_User" />
+        </EntityType>
+        <EntityType Name="BIBKA_Status">
+          <Key>
+            <PropertyRef Name="id_status" />
+          </Key>
+          <Property Name="id_status" Type="Int32" Nullable="false" />
+          <Property Name="status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BIBKA_History" Relationship="Self.FK_BIBKA_History_BIBKA_Status" FromRole="BIBKA_Status" ToRole="BIBKA_History" />
+        </EntityType>
+        <EntityType Name="BIBKA_User">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="Int32" Nullable="false" />
+          <Property Name="fk_id_role" Type="Int32" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BIBKA_History" Relationship="Self.FK_BIBKA_History_BIBKA_User" FromRole="BIBKA_User" ToRole="BIBKA_History" />
+          <NavigationProperty Name="BIBKA_Role" Relationship="Self.FK_BIBKA_User_BIBKA_Role" FromRole="BIBKA_User" ToRole="BIBKA_Role" />
+        </EntityType>
+        <Association Name="FK_BIBKA_Book_Author_BIBKA_Author">
+          <End Role="BIBKA_Author" Type="Self.BIBKA_Author" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Author" Type="Self.BIBKA_Book_Author" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Author">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Author">
+              <PropertyRef Name="fk_id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Author_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Author" Type="Self.BIBKA_Book_Author" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Author">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Genre_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Genre" Type="Self.BIBKA_Book_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Genre">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Izdatel_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Izdatel" Type="Self.BIBKA_Book_Izdatel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Izdatel">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_History_BIBKA_Book">
+          <End Role="BIBKA_Book" Type="Self.BIBKA_Book" Multiplicity="0..1" />
+          <End Role="BIBKA_History" Type="Self.BIBKA_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Book">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="BIBKA_History">
+              <PropertyRef Name="fk_id_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Genre_BIBKA_Genre">
+          <End Role="BIBKA_Genre" Type="Self.BIBKA_Genre" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Genre" Type="Self.BIBKA_Book_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Genre">
+              <PropertyRef Name="id_genre" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Genre">
+              <PropertyRef Name="fk_id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_Book_Izdatel_BIBKA_Izdatel">
+          <End Role="BIBKA_Izdatel" Type="Self.BIBKA_Izdatel" Multiplicity="0..1" />
+          <End Role="BIBKA_Book_Izdatel" Type="Self.BIBKA_Book_Izdatel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Izdatel">
+              <PropertyRef Name="id_izdatel" />
+            </Principal>
+            <Dependent Role="BIBKA_Book_Izdatel">
+              <PropertyRef Name="fk_id_izdatel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_History_BIBKA_Status">
+          <End Role="BIBKA_Status" Type="Self.BIBKA_Status" Multiplicity="0..1" />
+          <End Role="BIBKA_History" Type="Self.BIBKA_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Status">
+              <PropertyRef Name="id_status" />
+            </Principal>
+            <Dependent Role="BIBKA_History">
+              <PropertyRef Name="fk_id_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_History_BIBKA_User">
+          <End Role="BIBKA_User" Type="Self.BIBKA_User" Multiplicity="0..1" />
+          <End Role="BIBKA_History" Type="Self.BIBKA_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_User">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="BIBKA_History">
+              <PropertyRef Name="fk_id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BIBKA_User_BIBKA_Role">
+          <End Role="BIBKA_Role" Type="Self.BIBKA_Role" Multiplicity="0..1" />
+          <End Role="BIBKA_User" Type="Self.BIBKA_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BIBKA_Role">
+              <PropertyRef Name="id_role" />
+            </Principal>
+            <Dependent Role="BIBKA_User">
+              <PropertyRef Name="fk_id_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BIBKA_Author" EntityType="Self.BIBKA_Author" />
+          <EntitySet Name="BIBKA_Book" EntityType="Self.BIBKA_Book" />
+          <EntitySet Name="BIBKA_Book_Author" EntityType="Self.BIBKA_Book_Author" />
+          <EntitySet Name="BIBKA_Book_Genre" EntityType="Self.BIBKA_Book_Genre" />
+          <EntitySet Name="BIBKA_Book_Izdatel" EntityType="Self.BIBKA_Book_Izdatel" />
+          <EntitySet Name="BIBKA_Genre" EntityType="Self.BIBKA_Genre" />
+          <EntitySet Name="BIBKA_History" EntityType="Self.BIBKA_History" />
+          <EntitySet Name="BIBKA_Izdatel" EntityType="Self.BIBKA_Izdatel" />
+          <EntitySet Name="BIBKA_Role" EntityType="Self.BIBKA_Role" />
+          <EntitySet Name="BIBKA_Status" EntityType="Self.BIBKA_Status" />
+          <EntitySet Name="BIBKA_User" EntityType="Self.BIBKA_User" />
+          <AssociationSet Name="FK_BIBKA_Book_Author_BIBKA_Author" Association="Self.FK_BIBKA_Book_Author_BIBKA_Author">
+            <End Role="BIBKA_Author" EntitySet="BIBKA_Author" />
+            <End Role="BIBKA_Book_Author" EntitySet="BIBKA_Book_Author" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Author_BIBKA_Book" Association="Self.FK_BIBKA_Book_Author_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_Book_Author" EntitySet="BIBKA_Book_Author" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Genre_BIBKA_Book" Association="Self.FK_BIBKA_Book_Genre_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_Book_Genre" EntitySet="BIBKA_Book_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Izdatel_BIBKA_Book" Association="Self.FK_BIBKA_Book_Izdatel_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_Book_Izdatel" EntitySet="BIBKA_Book_Izdatel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_History_BIBKA_Book" Association="Self.FK_BIBKA_History_BIBKA_Book">
+            <End Role="BIBKA_Book" EntitySet="BIBKA_Book" />
+            <End Role="BIBKA_History" EntitySet="BIBKA_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Genre_BIBKA_Genre" Association="Self.FK_BIBKA_Book_Genre_BIBKA_Genre">
+            <End Role="BIBKA_Genre" EntitySet="BIBKA_Genre" />
+            <End Role="BIBKA_Book_Genre" EntitySet="BIBKA_Book_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_Book_Izdatel_BIBKA_Izdatel" Association="Self.FK_BIBKA_Book_Izdatel_BIBKA_Izdatel">
+            <End Role="BIBKA_Izdatel" EntitySet="BIBKA_Izdatel" />
+            <End Role="BIBKA_Book_Izdatel" EntitySet="BIBKA_Book_Izdatel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_History_BIBKA_Status" Association="Self.FK_BIBKA_History_BIBKA_Status">
+            <End Role="BIBKA_Status" EntitySet="BIBKA_Status" />
+            <End Role="BIBKA_History" EntitySet="BIBKA_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_History_BIBKA_User" Association="Self.FK_BIBKA_History_BIBKA_User">
+            <End Role="BIBKA_User" EntitySet="BIBKA_User" />
+            <End Role="BIBKA_History" EntitySet="BIBKA_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BIBKA_User_BIBKA_Role" Association="Self.FK_BIBKA_User_BIBKA_Role">
+            <End Role="BIBKA_Role" EntitySet="BIBKA_Role" />
+            <End Role="BIBKA_User" EntitySet="BIBKA_User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище user190_dbModelContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="BIBKA_Author">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Author">
+              <MappingFragment StoreEntitySet="BIBKA_Author">
+                <ScalarProperty Name="id_author" ColumnName="id_author" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Book">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book">
+              <MappingFragment StoreEntitySet="BIBKA_Book">
+                <ScalarProperty Name="id_book" ColumnName="id_book" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_description" ColumnName="book_description" />
+                <ScalarProperty Name="book_photo" ColumnName="book_photo" />
+                <ScalarProperty Name="book_produce_year" ColumnName="book_produce_year" />
+                <ScalarProperty Name="book_amount" ColumnName="book_amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Book_Author">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book_Author">
+              <MappingFragment StoreEntitySet="BIBKA_Book_Author">
+                <ScalarProperty Name="id_book_author" ColumnName="id_book_author" />
+                <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+                <ScalarProperty Name="fk_id_author" ColumnName="fk_id_author" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Book_Genre">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book_Genre">
+              <MappingFragment StoreEntitySet="BIBKA_Book_Genre">
+                <ScalarProperty Name="id_book_genre" ColumnName="id_book_genre" />
+                <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+                <ScalarProperty Name="fk_id_genre" ColumnName="fk_id_genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Book_Izdatel">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book_Izdatel">
+              <MappingFragment StoreEntitySet="BIBKA_Book_Izdatel">
+                <ScalarProperty Name="id_book_izdatel" ColumnName="id_book_izdatel" />
+                <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+                <ScalarProperty Name="fk_id_izdatel" ColumnName="fk_id_izdatel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Genre">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Genre">
+              <MappingFragment StoreEntitySet="BIBKA_Genre">
+                <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+                <ScalarProperty Name="genre_name" ColumnName="genre_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_History">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_History">
+              <MappingFragment StoreEntitySet="BIBKA_History">
+                <ScalarProperty Name="id_history" ColumnName="id_history" />
+                <ScalarProperty Name="fk_id_user" ColumnName="fk_id_user" />
+                <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+                <ScalarProperty Name="fk_id_status" ColumnName="fk_id_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Izdatel">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Izdatel">
+              <MappingFragment StoreEntitySet="BIBKA_Izdatel">
+                <ScalarProperty Name="id_izdatel" ColumnName="id_izdatel" />
+                <ScalarProperty Name="izdatel_name" ColumnName="izdatel_name" />
+                <ScalarProperty Name="izdatel_adress" ColumnName="izdatel_adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Role">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Role">
+              <MappingFragment StoreEntitySet="BIBKA_Role">
+                <ScalarProperty Name="id_role" ColumnName="id_role" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_Status">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Status">
+              <MappingFragment StoreEntitySet="BIBKA_Status">
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="status_name" ColumnName="status_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIBKA_User">
+            <EntityTypeMapping TypeName="user190_dbModel.BIBKA_User">
+              <MappingFragment StoreEntitySet="BIBKA_User">
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="fk_id_role" ColumnName="fk_id_role" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

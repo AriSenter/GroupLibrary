@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище user190_dbModelContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="BIBKA_Author">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Author">
+        <MappingFragment StoreEntitySet="BIBKA_Author">
+          <ScalarProperty Name="id_author" ColumnName="id_author" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Book">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book">
+        <MappingFragment StoreEntitySet="BIBKA_Book">
+          <ScalarProperty Name="id_book" ColumnName="id_book" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_description" ColumnName="book_description" />
+          <ScalarProperty Name="book_photo" ColumnName="book_photo" />
+          <ScalarProperty Name="book_produce_year" ColumnName="book_produce_year" />
+          <ScalarProperty Name="book_amount" ColumnName="book_amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Book_Author">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book_Author">
+        <MappingFragment StoreEntitySet="BIBKA_Book_Author">
+          <ScalarProperty Name="id_book_author" ColumnName="id_book_author" />
+          <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+          <ScalarProperty Name="fk_id_author" ColumnName="fk_id_author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Book_Genre">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book_Genre">
+        <MappingFragment StoreEntitySet="BIBKA_Book_Genre">
+          <ScalarProperty Name="id_book_genre" ColumnName="id_book_genre" />
+          <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+          <ScalarProperty Name="fk_id_genre" ColumnName="fk_id_genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Book_Izdatel">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Book_Izdatel">
+        <MappingFragment StoreEntitySet="BIBKA_Book_Izdatel">
+          <ScalarProperty Name="id_book_izdatel" ColumnName="id_book_izdatel" />
+          <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+          <ScalarProperty Name="fk_id_izdatel" ColumnName="fk_id_izdatel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Genre">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Genre">
+        <MappingFragment StoreEntitySet="BIBKA_Genre">
+          <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+          <ScalarProperty Name="genre_name" ColumnName="genre_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_History">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_History">
+        <MappingFragment StoreEntitySet="BIBKA_History">
+          <ScalarProperty Name="id_history" ColumnName="id_history" />
+          <ScalarProperty Name="fk_id_user" ColumnName="fk_id_user" />
+          <ScalarProperty Name="fk_id_book" ColumnName="fk_id_book" />
+          <ScalarProperty Name="fk_id_status" ColumnName="fk_id_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Izdatel">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Izdatel">
+        <MappingFragment StoreEntitySet="BIBKA_Izdatel">
+          <ScalarProperty Name="id_izdatel" ColumnName="id_izdatel" />
+          <ScalarProperty Name="izdatel_name" ColumnName="izdatel_name" />
+          <ScalarProperty Name="izdatel_adress" ColumnName="izdatel_adress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Role">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Role">
+        <MappingFragment StoreEntitySet="BIBKA_Role">
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_Status">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_Status">
+        <MappingFragment StoreEntitySet="BIBKA_Status">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIBKA_User">
+      <EntityTypeMapping TypeName="user190_dbModel.BIBKA_User">
+        <MappingFragment StoreEntitySet="BIBKA_User">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="fk_id_role" ColumnName="fk_id_role" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
